@@ -217,14 +217,55 @@ Onde:
 - \( s \) é o desvio padrão da amostra.
 - \( E \) é o erro amostral máximo permitido.
 
+## 3. (7.py) Uma indústria afirma que as baterias usadas em seus jogos eletrônicos durarão, em média, **30 horas**. Para manter essa média, são testadas **16 baterias** a cada mês. Se os valores calculados de **T** estiverem entre **-t_{0,025}** e **t_{0,025}**, a empresa fica satisfeita com sua afirmação.
+
+Pergunta-se: A que conclusão a empresa deveria chegar se uma amostra que tem uma **média de 27,5 horas** e **desvio-padrão de 5 horas** for utilizada? Assuma que a vida útil das baterias é aproximadamente normal.
+
+## Resolução
+
+Para resolver esta questão, realizamos um **teste t de Student** para avaliar se a média da amostra é significativamente diferente da média hipotética de 30 horas.
+
+### Passos do Teste de Hipótese
+
+1. **Hipóteses**:
+   - \( H_0 \): A média de duração das baterias é igual a 30 horas (\( \mu = 30 \)).
+   - \( H_1 \): A média de duração das baterias é diferente de 30 horas (\( \mu \neq 30 \)).
+
+2. **Nível de Significância**: Utilizamos um nível de significância de 5% (\( \alpha = 0,05 \)).
+
+3. **Estatística t Calculada**:
+   - A estatística t é calculada como:
+   \[
+   t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}
+   \]
+   Onde:
+   - \( \bar{x} \) é a média da amostra.
+   - \( \mu_0 \) é a média hipotética.
+   - \( s \) é o desvio padrão da amostra.
+   - \( n \) é o tamanho da amostra.
+
+4. **Valores Críticos**:
+   - Determinamos os valores críticos para o nível de significância de 0,05, usando a distribuição t com \( n - 1 \) graus de liberdade.
+
+5. **Conclusão**:
+   - Se a estatística t calculada estiver entre os valores críticos, não rejeitamos a hipótese nula.
+   - Caso contrário, rejeitamos a hipótese nula.
+
+### Representação Gráfica
+
+O script também gera uma **representação gráfica** da distribuição t de Student, destacando a região crítica (em vermelho) e a estatística t calculada (em verde).
+
 ## Bibliotecas Utilizadas
 - `math`: Utilizada para calcular o logaritmo natural.
 - `math`: Utilizada para calcular a raiz quadrada.
 - `numpy`: Utilizada para calcular a média e operações matemáticas.
+- `numpy`: Utilizada para operações matemáticas.
+- `scipy.stats`: Utilizada para calcular valores críticos da distribuição t.
 - `scipy.stats`: Utilizada para calcular valores críticos da distribuição t e normal.
 - `scipy.stats`: Utilizada para calcular a distribuição normal acumulada.
 - `scipy.stats`: Utilizada para calcular as probabilidades da distribuição de Poisson.
 - `scipy.stats`: Utilizada para calcular a distribuição normal acumulada.
+- `matplotlib`: Utilizada para gerar a representação gráfica.
 
 ## Como Executar
 Para executar este script, é necessário ter Python e a biblioteca `scipy` instalados. Você pode instalar a biblioteca usando o seguinte comando:
