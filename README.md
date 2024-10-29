@@ -135,10 +135,55 @@ Para calcular a probabilidade do tempo de resposta estar entre 0 e 30 segundos, 
 P(0 < X < 30) = \Phi\left(\frac{30 - 23}{4}\right) - \Phi\left(\frac{0 - 23}{4}\right)
 \]
 
+## 5. Um analista de sistemas está avaliando o desempenho de um novo programa de análise numérica. Forneceu como entrada do programa **14 operações similares** e obteve os seguintes tempos de processamento (em milissegundos):
+
+`12,0 - 13,5 - 16,0 - 15,7 - 15,8 - 16,5 - 15,0 - 13,1 - 15,2 - 18,1 - 18,5 - 12,3 - 17,5 - 17,0`
+
+Pergunta-se:
+
+1. (a) Calcule a **média** e o **desvio padrão** da amostra do tempo de processamento.
+2. (b) Construa um **intervalo de confiança** para o tempo médio de processamento, com nível de confiança de **95%**.
+3. (c) Qual deve ser o **tamanho da amostra** para garantir um erro amostral máximo de **0,5 milissegundo**, na estimação do tempo médio de processamento, com nível de confiança de **99%**?
+
+## Resolução
+
+### (a) Cálculo da Média e Desvio Padrão da Amostra
+
+- **Média da amostra**: Calculada usando a fórmula da média aritmética.
+- **Desvio padrão da amostra**: Calculado usando a fórmula do desvio padrão com correção de Bessel (\(ddof=1\)).
+
+### (b) Intervalo de Confiança para a Média
+
+O **intervalo de confiança** foi construído com nível de confiança de 95%, utilizando a distribuição **t de Student**, pois o tamanho da amostra é pequeno (\(n < 30\)). A margem de erro é dada por:
+
+\[
+ME = t_{\alpha/2} \cdot \frac{s}{\sqrt{n}}
+\]
+
+Onde:
+- \( t_{\alpha/2} \) é o valor crítico da distribuição t.
+- \( s \) é o desvio padrão da amostra.
+- \( n \) é o tamanho da amostra.
+
+### (c) Tamanho da Amostra para Erro Máximo de 0,5 ms
+
+Para calcular o **tamanho da amostra** necessário para garantir um erro amostral máximo de 0,5 milissegundo com nível de confiança de 99%, utilizamos a distribuição normal padrão, pois estamos estimando um tamanho de amostra futuro:
+
+\[
+n = \left( \frac{z_{\alpha/2} \cdot s}{E} \right)^2
+\]
+
+Onde:
+- \( z_{\alpha/2} \) é o valor crítico da distribuição normal.
+- \( s \) é o desvio padrão da amostra.
+- \( E \) é o erro amostral máximo permitido.
+
 
 ## Bibliotecas Utilizadas
 - `math`: Utilizada para calcular o logaritmo natural.
 - `math`: Utilizada para calcular a raiz quadrada.
+- `numpy`: Utilizada para calcular a média e operações matemáticas.
+- `scipy.stats`: Utilizada para calcular valores críticos da distribuição t e normal.
 - `scipy.stats`: Utilizada para calcular a distribuição normal acumulada.
 - `scipy.stats`: Utilizada para calcular as probabilidades da distribuição de Poisson.
 - `scipy.stats`: Utilizada para calcular a distribuição normal acumulada.
