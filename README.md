@@ -107,6 +107,9 @@ P(X > 120.5) = 1 - \Phi(Z)
 
 
 ## Bibliotecas Utilizadas
+- `math`: Utilizada para calcular o logaritmo natural.
+- `math`: Utilizada para calcular a raiz quadrada.
+- `scipy.stats`: Utilizada para calcular a distribuição normal acumulada.
 - `scipy.stats`: Utilizada para calcular as probabilidades da distribuição de Poisson.
 
 ## Como Executar
