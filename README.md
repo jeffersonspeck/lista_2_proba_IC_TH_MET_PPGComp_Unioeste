@@ -292,6 +292,48 @@ Onde:
 
 O script também gera uma **representação gráfica** da distribuição normal da proporção de chips adequados, destacando o intervalo de confiança de 95%.
 
+## 1. (9.py) Para testar se um sistema computacional "inteligente" adquiriu algum conhecimento sobre determinado assunto, elaborou-se **60 questões do tipo certo-errado**. O sistema acertou **40**. Qual é a conclusão ao nível de significância de **5%**?
+
+## Resolução
+
+Para resolver esta questão, realizamos um **teste de hipótese para proporções**.
+
+### Hipóteses
+
+- **Hipótese nula (\(H_0\))**: A proporção de acertos é igual a 0,5 (\(p = 0,5\)), ou seja, o sistema acerta ao acaso.
+- **Hipótese alternativa (\(H_1\))**: A proporção de acertos é maior que 0,5 (\(p > 0,5\)), ou seja, o sistema adquiriu algum conhecimento.
+
+### Nível de Significância
+
+Utilizamos um nível de significância de **5%** (\(\alpha = 0,05\)).
+
+### Estatística z Calculada
+
+A estatística z é calculada como:
+
+\[
+z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{n}}}
+\]
+
+Onde:
+- \(\hat{p}\) é a proporção de acertos na amostra.
+- \(p_0\) é a proporção hipotética (0,5).
+- \(n\) é o tamanho da amostra (60).
+
+### Valor Crítico z
+
+O valor crítico \(z_{\alpha}\) para um teste unilateral à direita com nível de significância de 5% é determinado usando a **distribuição normal padrão**.
+
+### Conclusão
+
+- Se \(z_{calculado} > z_{crítico}\), rejeitamos a hipótese nula e concluímos que o sistema adquiriu conhecimento.
+- Caso contrário, não rejeitamos a hipótese nula.
+
+### Representação Gráfica
+
+O script também gera uma **representação gráfica** da distribuição normal padrão, destacando a região crítica (em vermelho) e a estatística z calculada (em verde).
+
+
 ## Bibliotecas Utilizadas
 - `math`: Utilizada para calcular o logaritmo natural.
 - `math`: Utilizada para calcular a raiz quadrada.
