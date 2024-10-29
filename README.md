@@ -180,6 +180,42 @@ Onde:
 - \( s \) é o desvio padrão da amostra.
 - \( E \) é o erro amostral máximo permitido.
 
+## 2. (6.py) Fixados certos parâmetros de entrada, o tempo de execução de um algoritmo foi medido **12 vezes**, obtendo-se os seguintes resultados, em minutos:
+
+`15, 12, 14, 15, 16, 14, 16, 13, 14, 11, 15, 13`
+
+Pergunta-se:
+
+1. (a) Apresente um **intervalo de 95% de confiança** para o tempo médio de execução do algoritmo.
+2. (b) Considerando as 12 mensurações como uma **amostra piloto**, avalie o **número de mensurações** (tamanho da amostra) necessário para garantir um **erro máximo de 15 segundos (0,25 minutos)**, com nível de confiança de **95%**.
+
+## Resolução
+
+### (a) Intervalo de Confiança de 95% para o Tempo Médio de Execução
+
+O **intervalo de confiança** foi construído com nível de confiança de 95%, utilizando a distribuição **t de Student**, pois o tamanho da amostra é pequeno (\(n < 30\)). A margem de erro é dada por:
+
+\[
+ME = t_{\alpha/2} \cdot \frac{s}{\sqrt{n}}
+\]
+
+Onde:
+- \( t_{\alpha/2} \) é o valor crítico da distribuição t.
+- \( s \) é o desvio padrão da amostra.
+- \( n \) é o tamanho da amostra.
+
+### (b) Tamanho da Amostra para Erro Máximo de 0,25 Minutos
+
+Para calcular o **tamanho da amostra** necessário para garantir um erro amostral máximo de 0,25 minutos com nível de confiança de 95%, utilizamos a distribuição normal padrão, pois estamos estimando um tamanho de amostra futuro:
+
+\[
+n = \left( \frac{z_{\alpha/2} \cdot s}{E} \right)^2
+\]
+
+Onde:
+- \( z_{\alpha/2} \) é o valor crítico da distribuição normal.
+- \( s \) é o desvio padrão da amostra.
+- \( E \) é o erro amostral máximo permitido.
 
 ## Bibliotecas Utilizadas
 - `math`: Utilizada para calcular o logaritmo natural.
