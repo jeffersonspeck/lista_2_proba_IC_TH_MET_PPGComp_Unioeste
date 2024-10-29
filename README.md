@@ -253,7 +253,44 @@ Para resolver esta questão, realizamos um **teste t de Student** para avaliar s
 
 ### Representação Gráfica
 
-O script também gera uma **representação gráfica** da distribuição t de Student, destacando a região crítica (em vermelho) e a estatística t calculada (em verde).
+## 1. (8py) O script também gera uma **representação gráfica** da distribuição t de Student, destacando a região crítica (em vermelho) e a estatística t calculada (em verde).
+
+Uma unidade fabril da Intel produziu **500.000 chips Pentium IV** em certo período. Foram selecionados, aleatoriamente, **400 chips** para testes.
+
+1. (a) Supondo que **20 chips** não tenham a velocidade de processamento adequada, construa um **intervalo de confiança** para a proporção de chips adequados. Use nível de confiança de **95%**.
+2. (b) Verifique se essa amostra é suficiente para obter um intervalo de **99% de confiança**, com **erro amostral máximo de 0,5%**, para a proporção de chips adequados. Caso contrário, qual deveria ser o tamanho da amostra?
+
+## Resolução
+
+### (a) Intervalo de Confiança para a Proporção de Chips Adequados
+
+O **intervalo de confiança** foi construído com nível de confiança de 95%, utilizando a distribuição **normal** para estimar a proporção de chips adequados. A margem de erro é dada por:
+
+\[
+ME = z_{\alpha/2} \cdot \sqrt{\frac{p (1 - p)}{n}}
+\]
+
+Onde:
+- \( z_{\alpha/2} \) é o valor crítico da distribuição normal.
+- \( p \) é a proporção de chips adequados na amostra.
+- \( n \) é o tamanho da amostra.
+
+### (b) Tamanho da Amostra Necessário para Intervalo de Confiança de 99%
+
+Para calcular o **tamanho da amostra** necessário para garantir um erro amostral máximo de 0,5% com nível de confiança de 99%, utilizamos a fórmula:
+
+\[
+n = \left( \frac{z_{\alpha/2}^2 \cdot p (1 - p)}{E^2} \right)
+\]
+
+Onde:
+- \( z_{\alpha/2} \) é o valor crítico da distribuição normal para um nível de confiança de 99%.
+- \( p \) é a proporção de chips adequados na amostra.
+- \( E \) é o erro amostral máximo permitido.
+
+### Representação Gráfica
+
+O script também gera uma **representação gráfica** da distribuição normal da proporção de chips adequados, destacando o intervalo de confiança de 95%.
 
 ## Bibliotecas Utilizadas
 - `math`: Utilizada para calcular o logaritmo natural.
