@@ -1,6 +1,6 @@
 ## Enunciados
 
-## 1. Admita que o número de consultas a uma página inicial de uma determinada empresa, durante um período de tempo, obedece a uma distribuição de Poisson e que, em média, há duas consultas por dia. Pergunta-se:
+1. Admita que o número de consultas a uma página inicial de uma determinada empresa, durante um período de tempo, obedece a uma distribuição de Poisson e que, em média, há duas consultas por dia. Pergunta-se:
 
 Qual a probabilidade de que em um determinado:
    - (a) **Dia** sejam feitas exatamente **três consultas**?
@@ -69,6 +69,42 @@ Igualando a \(0,10\), obtemos:
 \[
 t_0 = -\frac{\ln(0,10)}{\lambda}
 \]
+
+Este script calcula a probabilidade de que ocorram mais de 120 requisições em um sistema de banco de dados durante o próximo minuto, utilizando a aproximação normal com correção de continuidade.
+
+## 3. No horário de maior movimento, um sistema de banco de dados recebe, em média, **100 requisições por minuto**, segundo uma distribuição de Poisson. Pergunta-se:
+
+Qual é a probabilidade de que no próximo minuto ocorram **mais de 120 requisições**? Use a **aproximação normal com correção de continuidade**.
+
+## Resolução
+
+Para resolver esta questão, utilizamos a **aproximação normal** para a distribuição de Poisson, visto que a média é grande (\(\lambda = 100\)). A aproximação normal pode ser usada para simplificar o cálculo da probabilidade.
+
+### Parâmetros da Aproximação Normal
+
+- Média (\(\mu\)) = 100
+- Desvio padrão (\(\sigma\)) = \(\sqrt{\lambda} = \sqrt{100} = 10\)
+
+Como queremos a probabilidade de ocorrer **mais de 120 requisições**, aplicamos a **correção de continuidade**, considerando \(P(X > 120) \approx P(X > 120.5)\).
+
+### Cálculo do Valor-Z
+
+\[
+Z = \frac{X - \mu}{\sigma}
+\]
+
+Substituindo os valores:
+
+\[
+Z = \frac{120.5 - 100}{10} = 2.05
+\]
+
+A probabilidade desejada é \(P(X > 120.5)\), que pode ser obtida usando a função de distribuição acumulada (CDF) da distribuição normal:
+
+\[
+P(X > 120.5) = 1 - \Phi(Z)
+\]
+
 
 ## Bibliotecas Utilizadas
 - `scipy.stats`: Utilizada para calcular as probabilidades da distribuição de Poisson.
