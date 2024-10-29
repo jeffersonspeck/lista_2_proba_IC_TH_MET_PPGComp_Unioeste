@@ -333,6 +333,122 @@ O valor crítico \(z_{\alpha}\) para um teste unilateral à direita com nível d
 
 O script também gera uma **representação gráfica** da distribuição normal padrão, destacando a região crítica (em vermelho) e a estatística z calculada (em verde).
 
+## 2. (10.py) Em certo banco de dados, o tempo para realização de buscas é aproximadamente normal, com média de **53 segundos** e desvio padrão de **14 segundos**. Depois de realizadas algumas modificações no sistema, observou-se que, em **30 consultas**, o tempo médio caiu para **45 segundos**. Há evidência de melhora? Admita que as 30 observações possam ser consideradas uma amostra aleatória e que não houve variação no desvio padrão. Use **α = 1%**.
+
+## Resolução
+
+Para resolver esta questão, realizamos um **teste t de Student** para avaliar se a média do tempo de busca após as modificações é significativamente menor do que a média anterior.
+
+### Hipóteses
+
+- **Hipótese nula (\(H_0\))**: A média do tempo de busca é igual a 53 segundos (\(\mu = 53\)).
+- **Hipótese alternativa (\(H_1\))**: A média do tempo de busca é menor do que 53 segundos (\(\mu < 53\)).
+
+### Nível de Significância
+
+Utilizamos um nível de significância de **1%** (\(\alpha = 0,01\)).
+
+### Estatística t Calculada
+
+A estatística t é calculada como:
+
+\[
+t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}
+\]
+
+Onde:
+- \(\bar{x}\) é a média da amostra após as modificações.
+- \(\mu_0\) é a média hipotética (53 segundos).
+- \(s\) é o desvio padrão (14 segundos).
+- \(n\) é o tamanho da amostra (30).
+
+### Valor Crítico t
+
+O valor crítico \(t_{\alpha}\) para um teste unilateral à esquerda com nível de significância de 1% é determinado usando a **distribuição t de Student** com \(n - 1\) graus de liberdade.
+
+### Conclusão
+
+- Se \(t_{calculado} < t_{crítico}\), rejeitamos a hipótese nula e concluímos que houve melhora significativa.
+- Caso contrário, não rejeitamos a hipótese nula.
+
+### Representação Gráfica
+
+O script também gera uma **representação gráfica** da distribuição t de Student, destacando a região crítica (em vermelho) e a estatística t calculada (em verde).
+
+## 3. (11.py) Para comparar dois algoritmos de otimização, foi realizado um experimento com **seis ensaios**. Em cada ensaio, foram usados separadamente os dois algoritmos em estudo, mas sob as mesmas condições (dados pareados). Os tempos de resposta ao usuário são mostrados na tabela abaixo:
+
+| Ensaio      | 1   | 2   | 3   | 4   | 5   | 6   |
+|-------------|-----|-----|-----|-----|-----|-----|
+| Algoritmo 1 | 8.1 | 8.9 | 9.3 | 9.6 | 8.1 | 11.2|
+| Algoritmo 2 | 9.2 | 9.8 | 9.9 | 10.3| 8.9 | 13.1|
+
+Pergunta-se: **Os tempos de resposta dos dois algoritmos são, em média, diferentes?** Use **α = 0,05**.
+
+## Resolução
+
+Para resolver esta questão, realizamos um **teste t pareado** para avaliar se há diferença significativa entre os tempos de resposta dos dois algoritmos.
+
+### Hipóteses
+
+- **Hipótese nula (\(H_0\))**: A média das diferenças dos tempos de resposta é igual a zero (\(\mu_d = 0\)), ou seja, não há diferença significativa entre os algoritmos.
+- **Hipótese alternativa (\(H_1\))**: A média das diferenças dos tempos de resposta é diferente de zero (\(\mu_d \neq 0\)), ou seja, há diferença significativa entre os algoritmos.
+
+### Nível de Significância
+
+Utilizamos um nível de significância de **5%** (\(\alpha = 0,05\)).
+
+### Estatística t Calculada
+
+A estatística t é calculada como:
+
+\[
+t = \frac{\bar{d}}{s_d / \sqrt{n}}
+\]
+
+Onde:
+- \(\bar{d}\) é a média das diferenças entre os tempos de resposta dos dois algoritmos.
+- \(s_d\) é o desvio padrão das diferenças.
+- \(n\) é o número de ensaios (6).
+
+### Valor Crítico t
+
+O valor crítico \(t_{\alpha/2}\) para um teste bilateral com nível de significância de 5% é determinado usando a **distribuição t de Student** com \(n - 1\) graus de liberdade.
+
+### Conclusão
+
+- Se \(|t_{calculado}| > t_{crítico}\), rejeitamos a hipótese nula e concluímos que os tempos de resposta são, em média, diferentes.
+- Caso contrário, não rejeitamos a hipótese nula.
+
+### Representação Gráfica
+
+O script também gera uma **representação gráfica** da distribuição t de Student, destacando a região crítica (em vermelho) e a estatística t calculada (em verde).
+
+## 4. (12.py) Sabe-se que é ideal um sono de **8 horas por dia**. Pesquisadores acreditam que o número médio de horas de sono dos alunos de certo curso pode ser **maior ou menor que 8 horas**. Podemos considerar que o número médio de horas de sono segue uma distribuição normal. Uma amostra de **10 alunos** forneceu os seguintes valores para o número de horas de sono:
+
+`8; 7; 7; 8; 7; 8; 9; 7; 7; 6,5`
+
+1. **(a)** Quais hipóteses estão sendo testadas?
+2. **(b)** Construa a região crítica adotando nível de significância de **5%** e conclua o teste.
+3. **(c)** Se agora temos uma amostra de **100 alunos** e obtemos uma média amostral igual a **7,55 horas** e desvio padrão amostral de **0,81 hora**, como fica a região crítica e a conclusão do teste adotando nível de significância de **5%**?
+
+## Resolução
+
+### (a) Hipóteses
+
+- **Hipótese nula (\(H_0\))**: O número médio de horas de sono dos alunos é igual a 8 horas (\(\mu = 8\)).
+- **Hipótese alternativa (\(H_1\))**: O número médio de horas de sono dos alunos é diferente de 8 horas (\(\mu \neq 8\)).
+
+### (b) Teste de Hipótese com Amostra de 10 Alunos
+
+Utilizamos um **teste t de Student** para avaliar se há uma diferença significativa, dado o tamanho pequeno da amostra (\(n = 10\)). Calculamos a estatística t e comparamos com o valor crítico da distribuição t com 9 graus de liberdade e nível de significância de 5%.
+
+### (c) Teste de Hipótese com Amostra de 100 Alunos
+
+Com uma amostra maior (\(n = 100\)), utilizamos a **distribuição normal padrão** para calcular a estatística z e o valor crítico z para o nível de significância de 5%. O teste determina se a média de 7,55 horas é significativamente diferente de 8 horas.
+
+### Representação Gráfica
+
+O script também gera uma **representação gráfica** da distribuição t de Student para a amostra de 10 alunos, destacando a região crítica e a estatística t calculada.
 
 ## Bibliotecas Utilizadas
 - `math`: Utilizada para calcular o logaritmo natural.
