@@ -135,7 +135,9 @@ Para calcular a probabilidade do tempo de resposta estar entre 0 e 30 segundos, 
 P(0 < X < 30) = \Phi\left(\frac{30 - 23}{4}\right) - \Phi\left(\frac{0 - 23}{4}\right)
 \]
 
-## 5. Um analista de sistemas está avaliando o desempenho de um novo programa de análise numérica. Forneceu como entrada do programa **14 operações similares** e obteve os seguintes tempos de processamento (em milissegundos):
+## Intervalo de confiança para méedia
+
+## 1. Um analista de sistemas está avaliando o desempenho de um novo programa de análise numérica. Forneceu como entrada do programa **14 operações similares** e obteve os seguintes tempos de processamento (em milissegundos):
 
 `12,0 - 13,5 - 16,0 - 15,7 - 15,8 - 16,5 - 15,0 - 13,1 - 15,2 - 18,1 - 18,5 - 12,3 - 17,5 - 17,0`
 
