@@ -105,12 +105,43 @@ A probabilidade desejada é \(P(X > 120.5)\), que pode ser obtida usando a funç
 P(X > 120.5) = 1 - \Phi(Z)
 \]
 
+## 4. Suponha que o tempo de resposta na execução de um algoritmo seja uma variável aleatória com distribuição normal de média **23 segundos** e desvio padrão de **4 segundos**. Pergunta-se:
+
+1. Qual é a probabilidade de que o tempo de resposta seja **menor do que 25 segundos**?
+2. Qual é a probabilidade de que o tempo de resposta fique **entre 0 e 30 segundos**?
+
+## Resolução
+
+Para resolver esta questão, utilizamos a distribuição normal, caracterizada pela média (\(\mu\)) e o desvio padrão (\(\sigma\)). Usamos a função de distribuição acumulada (CDF) para calcular as probabilidades desejadas.
+
+### (a) Probabilidade de o tempo de resposta ser menor do que 25 segundos
+
+- Média (\(\mu\)) = 23 segundos
+- Desvio padrão (\(\sigma\)) = 4 segundos
+
+A probabilidade de que o tempo de resposta seja menor do que 25 segundos pode ser obtida diretamente da função de distribuição acumulada:
+
+\[
+P(X < 25) = \Phi\left(\frac{25 - 23}{4}\right)
+\]
+
+Utilizamos a função `norm.cdf(x, mu, sigma)` da biblioteca `scipy.stats` para calcular a probabilidade acumulada até 25 segundos.
+
+### (b) Probabilidade de o tempo de resposta ficar entre 0 e 30 segundos
+
+Para calcular a probabilidade do tempo de resposta estar entre 0 e 30 segundos, subtraímos a CDF em 0 da CDF em 30:
+
+\[
+P(0 < X < 30) = \Phi\left(\frac{30 - 23}{4}\right) - \Phi\left(\frac{0 - 23}{4}\right)
+\]
+
 
 ## Bibliotecas Utilizadas
 - `math`: Utilizada para calcular o logaritmo natural.
 - `math`: Utilizada para calcular a raiz quadrada.
 - `scipy.stats`: Utilizada para calcular a distribuição normal acumulada.
 - `scipy.stats`: Utilizada para calcular as probabilidades da distribuição de Poisson.
+- `scipy.stats`: Utilizada para calcular a distribuição normal acumulada.
 
 ## Como Executar
 Para executar este script, é necessário ter Python e a biblioteca `scipy` instalados. Você pode instalar a biblioteca usando o seguinte comando:
